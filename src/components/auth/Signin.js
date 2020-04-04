@@ -50,7 +50,7 @@ class SignIn extends Component {
               Login
             </button>
 
-            {authError ? <p className="text-red-500">{authError}</p> : null}
+            {authError ? <p className="text-red-500 ">{authError}</p> : null}
           </div>
         </form>
       </div>

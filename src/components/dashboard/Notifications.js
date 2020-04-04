@@ -1,11 +1,25 @@
-import React from 'react';
+import React from "react";
+import moment from "moment";
 
-const Notifications=()=>{
-    return(
-        <div>
-            <p>Notifications</p>
-        </div>
-    )
-}
+const Notifications = props => {
+  //console.log(props)
+  const { notifications } = props;
+  return (
+    <div className="overflow-y-auto h-full" id="notifications-tab">
+      {notifications &&
+        notifications.map(item => {
+          return (
+            <div className="h-18 w-full rounded-lg shadow-sm bg-white  mb-5 px-5 py-5" key={item.id}>
+              <span className="text-red-500 ">{item.user} </span>
+              <span className="lowercase">{item.content}</span>
+              <p className="text-gray-600">
+                {moment(item.time.toDate()).startOf('minutes').fromNow()}
+              </p>
+            </div>
+          );
+        })}
+    </div>
+  );
+};
 
 export default Notifications;

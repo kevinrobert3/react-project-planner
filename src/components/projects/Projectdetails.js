@@ -3,21 +3,21 @@ import { connect } from "react-redux";
 import { firestoreConnect } from "react-redux-firebase";
 import { compose } from "redux";
 import { Redirect } from "react-router-dom";
+import moment from "moment";
 
 function ProjectDetails(props) {
-  const { project,auth } = props;
-  
-    if (!auth.uid) return <Redirect to="/signin" />;
+  const { project, auth } = props;
+
+  if (!auth.uid) return <Redirect to="/signin" />;
   if (project) {
     return (
       <div className="m-8 w-11/12 h-32 bg-green-200 p-5">
         <h3>Project Title : {project.title}</h3>
         <p>{project.content}</p>
         <p>
-          Posted By {project.authorFirstName}
-          {project.authorLastName}
+          Posted By {project.authorFirstName} {project.authorLastName}
         </p>
-        <p>2nd September 2020, 3pm</p>
+        <p>{moment(project.createdAt.toDate()).calendar()}</p>
       </div>
     );
   } else {

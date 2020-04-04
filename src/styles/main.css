@@ -1,0 +1,6 @@
+#project-list::-webkit-scrollbar {
+    display: none;
+  }
+  #project-list{
+    -ms-overflow-style: none;
+  }

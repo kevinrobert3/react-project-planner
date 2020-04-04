@@ -23,7 +23,7 @@ const SignedInLinks = props => {
 
       <NavLink to="/">
         <div className="rounded-full text-white font-semibold text-base bg-red-400 h-20 p-4 inline ml-6 items-center">
-          CM
+          {props.profile.initials}
         </div>
       </NavLink>
     </div>

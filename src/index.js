@@ -1,6 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import "./styles/index.css";
+import './styles/main.css';
 import App from "./App";
 import * as serviceWorker from "./serviceWorker";
 import { createStore, applyMiddleware, compose } from "redux";
@@ -21,7 +22,11 @@ const store = createStore(
       })
     ),
     reduxFirestore(config),
-    reactReduxFirebase(config, { attachAuthIsReady: true })
+    reactReduxFirebase(config, {
+      useFirestoreForProfile: true,
+      userProfile: 'Users',
+      attachAuthIsReady: true
+    })
   )
 );
 
