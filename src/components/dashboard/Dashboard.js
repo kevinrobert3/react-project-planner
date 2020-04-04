@@ -15,12 +15,15 @@ class DashBoard extends Component {
     return (
       <div className="grid grid-rows-3 grid-flow-col gap-10 h-screen mx-6 my-4">
         <div
-          className="row-span-3 col-span-2 bg-gray-200 overflow-y-auto"
+          className="row-span-3 col-span-4 bg-purple-100 px-6 py-6 overflow-y-auto"
           id="project-list"
         >
+          <h3 className="text-xl py-3 text-gray-700 ml-10 ">
+            Current projects
+          </h3>
           <ProjectList projects={projects} />
         </div>
-        <div className="row-span-3 col-span-4 bg-gray-200 p-6 pt-0 pb-20 rounded shadow-lg">
+        <div className="row-span-3 col-span-2 bg-purple-100 p-6 pt-0 pb-20 rounded border border-gray-200">
           <h1 className="text-center text-lg py-3 text-gray-700">
             Notifications
           </h1>

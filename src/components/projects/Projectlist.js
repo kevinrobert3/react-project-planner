@@ -5,8 +5,7 @@ import { Link } from "react-router-dom";
 const ProjectList = ({ projects }) => {
   //console.log(projects)
   return (
-    <div className=" bg-gray-100 p-8 m-3">
-     
+    <div className="">
       {projects &&
         projects.map(project => {
           return (

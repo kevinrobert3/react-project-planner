@@ -11,13 +11,18 @@ function ProjectDetails(props) {
   if (!auth.uid) return <Redirect to="/signin" />;
   if (project) {
     return (
-      <div className="m-8 w-11/12 h-32 bg-green-200 p-5">
-        <h3>Project Title : {project.title}</h3>
-        <p>{project.content}</p>
+      <div className="m-8 w-3/4 h-auto bg-white shadow rounded-lg px-10 py-5 border border-gray-200">
+        <h3 className="text-black text-lg">Project Title : {project.title}</h3>
+        <p className="text-gray-900">{project.content}</p>
         <p>
-          Posted By {project.authorFirstName} {project.authorLastName}
+          Added by{" "}
+          <span className="text-teal-600">
+            {project.authorFirstName} {project.authorLastName}
+          </span>
         </p>
-        <p>{moment(project.createdAt.toDate()).calendar()}</p>
+        <p className="text-gray-600">
+          {moment(project.createdAt.toDate()).calendar()}
+        </p>
       </div>
     );
   } else {

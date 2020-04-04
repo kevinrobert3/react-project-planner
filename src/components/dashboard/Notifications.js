@@ -9,11 +9,16 @@ const Notifications = props => {
       {notifications &&
         notifications.map(item => {
           return (
-            <div className="h-18 w-full rounded-lg shadow-sm bg-white  mb-5 px-5 py-5" key={item.id}>
-              <span className="text-red-500 ">{item.user} </span>
+            <div
+              className="h-18 w-full rounded-lg shadow-sm bg-white  mb-5 px-5 py-5 border border-gray-200"
+              key={item.id}
+            >
+              <span className="text-teal-600 ">{item.user} </span>
               <span className="lowercase">{item.content}</span>
               <p className="text-gray-600">
-                {moment(item.time.toDate()).startOf('minutes').fromNow()}
+                {moment(item.time.toDate())
+                  .startOf("minutes")
+                  .fromNow()}
               </p>
             </div>
           );
